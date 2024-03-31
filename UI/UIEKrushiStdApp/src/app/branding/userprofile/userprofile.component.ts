@@ -5,8 +5,8 @@ import { User } from '@models/user';
 import { MembershipService } from '@services/membership.service';
 import { StateChangeEvent } from '@models/stateChangeEvent';
 import { AuthenticationService } from '@services/authentication.service';
-import { Token } from '@angular/compiler';
 import { TokenClaims } from '@enums/tokenclaims';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'userprofile',
@@ -16,7 +16,7 @@ import { TokenClaims } from '@enums/tokenclaims';
 export class UserprofileComponent {
  userId!: number;
   user!: User;
-  imageServerUrl: string = 'http://localhost:5142/';
+  imageServerUrl: string = environment.imageServerUrl;
   selectedFile: File | undefined;
   selectedImageUrl: string | undefined;
   editingImage: boolean = false;

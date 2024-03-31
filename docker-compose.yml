@@ -1,0 +1,110 @@
+version: '2.0'
+
+services:
+  ekrushi-mysql-server:
+    image: mysql:latest
+    container_name: ekrushi-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: ekrushi
+    ports:
+      - "3313:3306"
+    volumes:
+      - ekrushi-db:/var/lib/mysql
+      - ./Databases/DbScript:/docker-entrypoint-initdb.d
+    restart: always
+
+  orders-service:
+    build:
+      context: ./Dotnet/NewAPI/Orders
+    container_name: ekrushi-orders
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+   
+  
+  bi-service:
+    build:
+      context: ./Dotnet/NewAPI/BI
+    container_name: ekrushi-bi
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+ 
+
+  catalog-service:
+    build:
+      context: ./Dotnet/NewAPI/Catalog
+    container_name: ekrushi-catalog
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+ 
+  consulting-service:
+    build:
+      context: ./Dotnet/NewAPI/Consulting
+    container_name: ekrushi-consulting
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+ 
+  payments-service:
+    build:
+      context: ./Dotnet/NewAPI/Payments
+    container_name: ekrushi-payments
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+ 
+  shippers-service:
+    build:
+      context: ./Dotnet/NewAPI/Shippers
+    container_name: ekrushi-shippers
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+ 
+  shoppingcart-service:
+    build:
+      context: ./Dotnet/NewAPI/ShoppingCart
+    container_name: ekrushi-shoppingcart
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+   
+  stores-service:
+    build:
+      context: ./Dotnet/NewAPI/Stores
+    container_name: ekrushi-stores
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+  
+  suppliers-service:
+    build:
+      context: ./Dotnet/NewAPI/Suppliers
+    container_name: ekrushi-suppliers
+    depends_on:
+      - ekrushi-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+ 
+
+  api-gateway:
+    build:
+      context: ./Dotnet/NewAPI/GateWay
+    container_name: ekrushi-gateway
+    ports:
+      - "5000:80"
+   
+ 
+volumes:
+  ekrushi-db:

@@ -1,0 +1,335 @@
+{
+  
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/orders/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orders-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orders/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/orders",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orders-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orders",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/products/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/products",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/categories/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/categories/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/categories",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/categories",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/bi/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "bi-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/bi/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/consulting/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "consulting-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/consulting/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/consulting",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "consulting-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/consulting",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/payments/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payments-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/payments/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/payments",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "payments-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/payments",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/shippers/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shippers-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/shippers/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/carts/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shoppingcart-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/carts/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/carts",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shoppingcart-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/carts",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/stores/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "stores-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/stores/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/suppliers/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "suppliers-service",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/suppliers/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/accounts/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5053
+        }
+      ],
+      "UpstreamPathTemplate": "/api/accounts/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/fundstransfer",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/fundstransfer",
+      "UpstreamHttpMethod": ["OPTIONS", "POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/corporates/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5041
+        }
+      ],
+      "UpstreamPathTemplate": "/api/corporates/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/users/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/api/users/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/users",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/api/users",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/addresses/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/api/addresses/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/addresses",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/api/addresses",
+      "UpstreamHttpMethod": ["OPTIONS", "GET", "POST", "PUT", "DELETE"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/files/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/api/files/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "POST"]
+    },
+
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5142
+        }
+      ],
+      "UpstreamPathTemplate": "/{everything}",
+      "UpstreamHttpMethod": ["OPTIONS", "GET"]
+    }
+  ]
+}

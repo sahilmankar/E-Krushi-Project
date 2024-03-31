@@ -18,28 +18,6 @@ END;
 
 
 
-CREATE TRIGGER after_order_insert
-AFTER INSERT ON orders
-FOR EACH ROW
-BEGIN
-    INSERT INTO ordershistory (orderid,status)
-    VALUES (NEW.id,NEW.status);
-END;
-
-
-
-
-CREATE TRIGGER after_order_update
-AFTER UPDATE ON orders
-FOR EACH ROW
-BEGIN
-    IF NEW.status <> OLD.status THEN
-        INSERT INTO ordershistory (orderid,status)
-        VALUES (OLD.id, NEW.status);
-    END IF;
-END;
-
-
 
 
 CREATE PROCEDURE GetStoreOrderCountForMonth

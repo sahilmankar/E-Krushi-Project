@@ -20,12 +20,12 @@ export class AuthenticationService {
   private authServiceurl: string = environment.authServiceUrl;
   
   signIn(credential: Credential): Observable<any> {
-    let url = `http://localhost:5142/api/auth/signin`;
+    let url = `${this.authServiceurl}/signin`;
     return this.httpClient.post<any>(url, credential);
   }
 
   changePassword(credential: UpdatePassword): Observable<boolean> {
-    let url = `http://localhost:5142/api/auth/updatepassword`;
+    let url = `${this.authServiceurl}/updatepassword`;
     const jwt = localStorage.getItem('jwt');
     return this.httpClient.put<any>(url, credential, {
       headers: { authorization: `Bearer ${jwt}` },

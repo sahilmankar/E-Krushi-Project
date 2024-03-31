@@ -1,8 +1,8 @@
 -- Active: 1696576841746@@127.0.0.1@3306@ekrushi
 
-drop database ekrushi;
+DROP DATABASE IF EXISTs ekrushi;
 
-CREATE DATABASE ekrushi;
+CREATE DATABASE IF NOT EXISTS ekrushi;
 
 USE ekrushi;
 
@@ -28,13 +28,7 @@ CREATE TABLE
         addressid INT
     );
 
-CREATE TABLE
-    subjectmatterexperts(
-        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        categoryid INT,
-        CONSTRAINT fk_smeuser FOREIGN KEY (categoryid) REFERENCES questioncategories(id) ON UPDATE CASCADE ON DELETE CASCADE,
-        userid INT NOT NULL
-    );
+
 
 CREATE TABLE
     products(
@@ -161,6 +155,13 @@ CREATE TABLE
         category varchar(255)
     );
 
+CREATE TABLE
+    subjectmatterexperts(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        categoryid INT,
+        CONSTRAINT fk_smeuser FOREIGN KEY (categoryid) REFERENCES questioncategories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+        userid INT NOT NULL
+    );
 CREATE TABLE
     questions(
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

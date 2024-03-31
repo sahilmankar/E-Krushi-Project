@@ -33,7 +33,7 @@ import { LocalStorageKeys } from '@enums/local-storage-keys';
     JwtModule.forRoot({
       config: {
         tokenGetter: () => localStorage.getItem(LocalStorageKeys.jwt),
-        allowedDomains: ['localhost:5142', 'localhost:5263'],
+        allowedDomains: ['localhost:5142', 'localhost:5263','localhost:5000'],
       },
     }),
 

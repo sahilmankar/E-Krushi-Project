@@ -29,7 +29,6 @@ SELECT id,description FROM questions where id!=6 AND categoryid  IN (select cate
 SELECT * FROM questions;
 select orders.orderdate from orders LEFT join payments on orders.id=payments.orderid ;
 
-select * from roles;
 
 select count(orderdate),monthname(orderdate) from orders order by orderdate;
 
@@ -95,7 +94,6 @@ SELECT userid,
 FROM accounts WHERE userid=1;
 
 --   this query return user_id of employees;
-select userid from userroles where roleid in (SELECT id from roles where role="Employee");
 
 -- this method gives the total count of orders
 SELECT count(*) from orders ;
@@ -264,9 +262,7 @@ SELECT * FROM customers where userid=2;
 --this query gives data where userid=1
 select * from userroles where userid=1;
 
--- this query gives the roles of particular user
-select id from users where contactnumber ='9881571268';
-select roles.role from roles inner join userroles on roles.id = userroles.roleid where userroles.userid=2;
+
                  
 SELECT * FROM orders;
 
