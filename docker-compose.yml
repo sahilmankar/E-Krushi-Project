@@ -13,6 +13,18 @@ services:
       - ekrushi-db:/var/lib/mysql
       - ./Databases/DbScript:/docker-entrypoint-initdb.d
     restart: always
+  
+  tap-common-mysql-server:
+    image: sahilmankar/tap-common-dbs:latest
+    container_name: tap-commondb
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bankingdb,corporatedb,membershiprolesdb
+    ports:
+      - "3325:3306"
+    volumes:
+      - tap-commondb:/var/lib/mysql
+    restart: always
 
   orders-service:
     build:
@@ -97,7 +109,38 @@ services:
     environment:
       ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
  
-
+  membership-service:
+    image: sahilmankar/tap-membershiprolesmgmt:latest
+    container_name: common-membership
+    depends_on:
+      - tap-common-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=tap-common-mysql-server;Port=3306;Database=membershiprolesdb;User=root;Password=password;
+  
+  banikng-service:
+    image: sahilmankar/tap-banking:latest
+    container_name: common-banking
+    depends_on:
+      - tap-common-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=tap-common-mysql-server;Port=3306;Database=bankingdb;User=root;Password=password;
+ 
+  payment-gateway-service:
+    image: sahilmankar/tap-paymentgateway:latest
+    container_name: common-paymentgateway
+    depends_on:
+      - tap-common-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=tap-common-mysql-server;Port=3306;Database=bankingdb;User=root;Password=password;
+ 
+  corporate-service:
+    image: sahilmankar/tap-corporates:latest
+    container_name: common-corporates
+    depends_on:
+      - tap-common-mysql-server
+    environment:
+      ConnectionStrings__DefaultConnection: Server=tap-common-mysql-server;Port=3306;Database=corporatedb;User=root;Password=password;
+ 
   api-gateway:
     build:
       context: ./Dotnet/NewAPI/GateWay
@@ -108,3 +151,4 @@ services:
  
 volumes:
   ekrushi-db:
+  tap-commondb:
