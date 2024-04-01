@@ -5,36 +5,27 @@
 export const environment = {
   production: false,
 
-  
-  cartServiceUrl: 'http://localhost:5000/api/carts',
-  biServiceUrl: 'http://localhost:5000/api/bi',
-  catalogServiceProductUrl: 'http://localhost:5000/api/products',
-  catalogServiceCategoriesUrl: 'http://localhost:5000/api/categories',
-  consultingServiceUrl: 'http://localhost:5000/api/consulting',
-  ordersServiceUrl: 'http://localhost:5000/api/orders',
-  paymentsServiceUrl: 'http://localhost:5000/api/payments',
-  shippersServiceUrl: 'http://localhost:5000/api/shippers',
-  storesServiceUrl: 'http://localhost:5000/api/stores',
-  suppliersServiceUrl: 'http://localhost:5000/api/suppliers',
+  cartServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/carts',
+  biServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/bi',
+  catalogServiceProductUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/products',
+  catalogServiceCategoriesUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/categories',
+  consultingServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/consulting',
+  ordersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/orders',
+  paymentsServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/payments',
+  shippersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/shippers',
+  storesServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/stores',
+  suppliersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/suppliers',
 
-  bankingServiceUrl: 'http://localhost:5000/api/accounts',
-  paymentGatewayServiceUrl: 'http://localhost:5000/api',
-  corporateServiceUrl: 'http://localhost:5000/api/corporates',
+  bankingServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/accounts',
+  paymentGatewayServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api',
+  corporateServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/corporates',
 
-  authServiceUrl: 'http://localhost:5000/api/auth',
-  usersServiceUrl: 'http://localhost:5000/api/users',
-  userAddressServiceUrl: 'http://localhost:5000/api/addresses',
-  fileIOServiceUrl:'http://localhost:5000/api/files',
-  imageServerUrl: 'http://localhost:5000/'
-
-
-
-
-
-
-
-
-
+  authServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/auth',
+  usersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/users',
+  userAddressServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/addresses',
+  fileIOServiceUrl:'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/files',
+  imageServerUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/'
+ 
 
 
 
