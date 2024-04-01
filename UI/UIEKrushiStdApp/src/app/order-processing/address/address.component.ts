@@ -4,9 +4,9 @@ import { DeleteConfirmationComponent } from '@ekrushi-confirmationboxes/delete-c
 import { SessionStorageKeys } from '@enums/session-storage-keys';
 import { TokenClaims } from '@enums/tokenclaims';
 import { Address } from '@models/address';
+import { StateChangeEvent } from '@models/stateChangeEvent';
 import { AuthenticationService } from '@services/authentication.service';
 import { UserService } from '@services/user.service';
-import { StateChangeEvent } from 'membership-lib/lib/stateChangeEvent';
 
 @Component({
   selector: 'app-address',

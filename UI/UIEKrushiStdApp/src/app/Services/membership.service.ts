@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '@models/user';
-import { Address } from 'membership-lib/lib/address';
 import { environment } from '@environments/environment';
+import { Address } from '@models/address';
 
 @Injectable({
   providedIn: 'root',
