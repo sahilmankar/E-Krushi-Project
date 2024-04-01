@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
 
+  
   cartServiceUrl: 'http://localhost:5000/api/carts',
   biServiceUrl: 'http://localhost:5000/api/bi',
   catalogServiceProductUrl: 'http://localhost:5000/api/products',

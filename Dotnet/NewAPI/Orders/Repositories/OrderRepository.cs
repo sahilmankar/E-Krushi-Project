@@ -10,12 +10,14 @@ namespace Transflower.EKrushi.Orders.Repositories;
 public class OrderRepository : IOrderRepository
 {
     private readonly OrderContext _context;
+    private readonly IConfiguration _configuration;
     private readonly IHttpClientFactory _httpClientFactory;
 
-    public OrderRepository(OrderContext context, IHttpClientFactory httpClientFactory)
+    public OrderRepository(OrderContext context, IHttpClientFactory httpClientFactory,IConfiguration configuration)
     {
         _context = context; 
         _httpClientFactory = httpClientFactory;
+        _configuration=configuration;
     }
 
     public async Task<OrderAmount> CreateOrder(OrderAddModel orderAddModel)
@@ -204,7 +206,8 @@ public class OrderRepository : IOrderRepository
     {
         try
         {
-            string requestUrl = "http://localhost:5226/api/stores/nearby/" + customerAddressId;
+            var storesAPI=_configuration["Hosts:Stores"];
+            string requestUrl = $"{storesAPI}/api/stores/nearby/{customerAddressId}";
 
             HttpClient httpClient = _httpClientFactory.CreateClient();
             HttpResponseMessage? response = await httpClient.GetAsync(requestUrl);
@@ -360,7 +363,9 @@ public class OrderRepository : IOrderRepository
     {
         try
         {
-            string requestUrl = "http://localhost:5298/api/shippers/nearby/" + storeId;
+            var shippersAPI=_configuration["Hosts:Shippers"];
+
+            string requestUrl = $"{shippersAPI}/api/shippers/nearby/{storeId}";
 
             HttpClient httpClient = _httpClientFactory.CreateClient();
             var response = await httpClient.GetAsync(requestUrl);

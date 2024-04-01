@@ -62,10 +62,13 @@ public class ShipperRepository : IShipperRepository
         {
             int storeAddressId = await GetAddressIdOfStore(storeId);
             var shipperaddressIds = await GetAddressIdOfShippers();
+
+            var addressesAPI=_configuration["Hosts:Addresses"];
+
             var body = new { addressId = storeAddressId, addressIds = shipperaddressIds };
             string jsonBody = JsonSerializer.Serialize(body);
             var requestContent = new StringContent(jsonBody, Encoding.UTF8, "application/json");
-            string requestUrl = "http://localhost:5142/api/addresses/nearest";
+            string requestUrl = $"{addressesAPI}/api/addresses/nearest";
 
             HttpClient httpClient = _httpClientFactory.CreateClient();
             var response = await httpClient.PostAsync(requestUrl, requestContent);
