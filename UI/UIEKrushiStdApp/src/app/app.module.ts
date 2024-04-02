@@ -20,6 +20,7 @@ import { BrandingModule } from './branding/branding.module';
 import { pagesRoutes } from './pagesmodule/pagesmodule.module';
 import { crmRoutes } from '@ekrushi-crm/crm.module';
 import { LocalStorageKeys } from '@enums/local-storage-keys';
+import { NgrokSkipInterceptor } from '@ekrushi-shared/Interceptors/ngrok-skip.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -51,7 +52,7 @@ import { LocalStorageKeys } from '@enums/local-storage-keys';
     BrowserAnimationsModule,
   ],
   providers: [
-    // OrderService,
+    { provide: HTTP_INTERCEPTORS, useClass: NgrokSkipInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })
