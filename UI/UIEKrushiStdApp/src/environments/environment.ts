@@ -5,26 +5,26 @@
 export const environment = {
   production: false,
 
-  cartServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/carts',
-  biServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/bi',
-  catalogServiceProductUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/products',
-  catalogServiceCategoriesUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/categories',
-  consultingServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/consulting',
-  ordersServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/orders',
-  paymentsServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/payments',
-  shippersServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/shippers',
-  storesServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/stores',
-  suppliersServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/suppliers',
+  cartServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/carts',
+  biServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/bi',
+  catalogServiceProductUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/products',
+  catalogServiceCategoriesUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/categories',
+  consultingServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/consulting',
+  ordersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/orders',
+  paymentsServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/payments',
+  shippersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/shippers',
+  storesServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/stores',
+  suppliersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/suppliers',
 
-  bankingServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/accounts',
-  paymentGatewayServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api',
-  corporateServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/corporates',
+  bankingServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/accounts',
+  paymentGatewayServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api',
+  corporateServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/corporates',
 
-  authServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/auth',
-  usersServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/users',
-  userAddressServiceUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/addresses',
-  fileIOServiceUrl:' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/api/files',
-  imageServerUrl: ' https://d3a3-2409-40c2-116b-10d0-2041-7803-251a-6ed6.ngrok-free.app/'
+  authServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/auth',
+  usersServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/users',
+  userAddressServiceUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/addresses',
+  fileIOServiceUrl:'https://9rlqtdsw-5000.inc1.devtunnels.ms/api/files',
+  imageServerUrl: 'https://9rlqtdsw-5000.inc1.devtunnels.ms/'
  
 
 
