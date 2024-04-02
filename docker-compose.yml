@@ -145,6 +145,9 @@ services:
     build:
       context: ./Dotnet/NewAPI/GateWay
     container_name: ekrushi-gateway
+    environment:
+      Hosts__frontend: https://e-krushi-project-qszq3lbym-sahil-mankars-projects.vercel.app;
+ 
     ports:
       - "5000:80"
    

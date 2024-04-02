@@ -33,6 +33,7 @@ var frontendUrl= builder.Configuration.GetSection("Hosts").GetValue<string>("fro
 app.UseHttpsRedirection();
 app.UseCors(x => x.WithOrigins(frontendUrl).AllowAnyMethod().AllowAnyHeader().AllowCredentials());
 
+
 Console.WriteLine(builder.Configuration.GetSection("Hosts").GetValue<string>("frontend"));
 app.UseAuthorization();
 
