@@ -16,6 +16,8 @@ builder.Services.AddSession(
         options.IdleTimeout = TimeSpan.FromMinutes(15);
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = true;
+        options.Cookie.SameSite = SameSiteMode.None;
+        options.Cookie.SecurePolicy=CookieSecurePolicy.Always;
     }
 );
 
@@ -38,8 +40,12 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseCors(x => x.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-app.UseSession();
+var frontendUrl= builder.Configuration.GetSection("Hosts").GetValue<string>("frontend");
+
+app.UseCors(x => x.WithOrigins(frontendUrl).AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+// app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+Console.WriteLine(builder.Configuration.GetSection("Hosts").GetValue<string>("frontend"));app.UseSession();
 
 
 app.MapControllers();

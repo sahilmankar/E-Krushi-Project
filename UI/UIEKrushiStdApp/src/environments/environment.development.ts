@@ -20,9 +20,9 @@ export const environment = {
   usersServiceUrl: 'http://localhost:5000/api/users',
   userAddressServiceUrl: 'http://localhost:5000/api/addresses',
   fileIOServiceUrl:'http://localhost:5000/api/files',
-  imageServerUrl: 'http://localhost:5000/'
+  imageServerUrl: 'http://localhost:5000/',
+  allowedDomains: ['localhost:5142', 'localhost:5263','localhost:5000'],
 
-  
 
 
 };

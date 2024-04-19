@@ -32,6 +32,7 @@ if (app.Environment.IsDevelopment())
 var frontendUrl= builder.Configuration.GetSection("Hosts").GetValue<string>("frontend");
 app.UseHttpsRedirection();
 app.UseCors(x => x.WithOrigins(frontendUrl).AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+// app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 
 Console.WriteLine(builder.Configuration.GetSection("Hosts").GetValue<string>("frontend"));

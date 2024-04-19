@@ -90,6 +90,7 @@ services:
       - ekrushi-mysql-server
     environment:
       ConnectionStrings__DefaultConnection: Server=ekrushi-mysql-server;Port=3306;Database=ekrushi;User=root;Password=password;
+      Hosts__frontend: https://e-krushi-project.vercel.app
    
   stores-service:
     build:
@@ -146,7 +147,7 @@ services:
       context: ./Dotnet/NewAPI/GateWay
     container_name: ekrushi-gateway
     environment:
-      Hosts__frontend: https://e-krushi-project-qszq3lbym-sahil-mankars-projects.vercel.app;
+      Hosts__frontend: https://e-krushi-project.vercel.app
  
     ports:
       - "5000:80"

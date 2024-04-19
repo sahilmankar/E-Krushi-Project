@@ -26,7 +26,7 @@ export class ShipperService {
     return this.httpClient.get<number>(url);
   }
 
-  getOrderCountByStatusAndShipper(shipperId: number ): Observable<OrderStatusCount> {
+    getOrderCountByStatusAndShipper(shipperId: number ): Observable<OrderStatusCount> {
     let url = `${this.apiurl}/orderscount/${shipperId}`;
     return this.httpClient.get<OrderStatusCount>(url);
   }

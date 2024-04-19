@@ -13,6 +13,11 @@ public class CartsController : ControllerBase
     [HttpGet]
     public async Task<Cart> GetCart()
     {
+        foreach (var cokkie in Request.Cookies)
+        {
+            Console.WriteLine(cokkie.Key + "----" + cokkie.Value);
+        }
+
         Cart cart =
             await HttpContext.Session.GetObjectFromJson<Cart>(SessionKeys.Cart) ?? new Cart();
         return cart;
@@ -21,7 +26,14 @@ public class CartsController : ControllerBase
     [HttpPost]
     public async Task<bool> AddItemToCart([FromBody] Item item)
     {
-        var cart = await HttpContext.Session.GetObjectFromJson<Cart>(SessionKeys.Cart) ?? new Cart();
+        foreach (var cokkie in Request.Cookies)
+        {
+            Console.WriteLine(cokkie.Key + "----" + cokkie.Value);
+        }
+        var cart =
+            await HttpContext.Session.GetObjectFromJson<Cart>(SessionKeys.Cart) ?? new Cart();
+
+            Console.WriteLine(cart);
         cart.Items.Add(item);
         await HttpContext.Session.SetObjectAsJson(SessionKeys.Cart, cart);
         return true;
@@ -71,6 +83,7 @@ public class CartsController : ControllerBase
         await HttpContext.Session.SetObjectAsJson(SessionKeys.Cart, cart);
         return status;
     }
+
     [HttpDelete]
     [Route("items/removeall")]
     public async Task<bool> RemoveAllCartItems()
@@ -78,13 +91,17 @@ public class CartsController : ControllerBase
         Cart cart = new();
         await HttpContext.Session.SetObjectAsJson(SessionKeys.Cart, cart);
         return true;
-
     }
 
     [HttpGet]
     [Route("items/product/ispresent/{productDetailsId}")]
     public async Task<bool> IsProductInCart(int productDetailsId)
     {
+        foreach (var cokkie in Request.Cookies)
+        {
+            Console.WriteLine(cokkie.Key + "----" + cokkie.Value);
+        }
+
         var cart = await HttpContext.Session.GetObjectFromJson<Cart>(SessionKeys.Cart);
         if (cart is null)
         {
